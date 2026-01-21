@@ -13,6 +13,20 @@ PHProf est un assistant conversationnel qui aide les développeurs francophones 
 - **Pédagogique** - Format TL;DR / Problème / Solution / Explication / À retenir
 - **Multi-plateforme** - macOS, Linux, Windows
 
+## Cas d'usage
+
+PHProf peut vous aider a :
+
+- **Corriger du code PHP** - Identifier et corriger les erreurs de syntaxe ou de logique
+- **Expliquer du code** - Comprendre un bout de code PHP ou Symfony
+- **Ecrire du code** - Generer des controllers, entities, repositories, services...
+- **Deboguer** - Trouver pourquoi votre code ne fonctionne pas
+- **Apprendre** - Comprendre les concepts PHP 8.x (types, attributs, enums, match...)
+- **Bonnes pratiques** - Appliquer les standards PSR, SOLID, design patterns
+- **Symfony** - Routing, controllers, Doctrine, Forms, Security, Twig, Messenger...
+- **Tests** - Ecrire des tests PHPUnit et des tests fonctionnels Symfony
+- **Refactoring** - Moderniser du code legacy vers PHP 8.x
+
 ## Prérequis
 
 - Python 3.11+
