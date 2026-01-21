@@ -15,7 +15,11 @@ inference:
   # Paramètres llama.cpp
   n_ctx: 4096          # Fenêtre de contexte
   n_predict: 1024      # Tokens max en sortie
-  n_gpu_layers: -1     # -1 = toutes les couches sur GPU (Metal)
+  # n_gpu_layers:
+  #   -1 = toutes les couches sur GPU
+  #   0  = CPU uniquement
+  # Auto-detecte: Metal (macOS), CUDA (Linux/Windows avec NVIDIA)
+  n_gpu_layers: -1
 
   # Sampling
   temperature: 0.7

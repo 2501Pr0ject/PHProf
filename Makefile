@@ -1,7 +1,7 @@
 # PHProf - Makefile
 # Assistant pédagogique IA local pour PHP et Symfony
 
-.PHONY: help install download-model download-docs build-index \
+.PHONY: help install install-all install-macos download-model download-docs build-index \
         chat ask evaluate train export clean lint test all setup
 
 # Variables
@@ -32,10 +32,15 @@ install: ## Installe les dépendances Python
 	uv sync
 	@echo "$(GREEN)-> Dépendances installées$(RESET)"
 
-install-all: ## Installe toutes les dépendances (dev + train + eval)
+install-all: ## Installe toutes les dépendances (dev + eval)
 	@echo "$(BLUE)Installation de toutes les dépendances...$(RESET)"
 	uv sync --all-extras
 	@echo "$(GREEN)-> Toutes les dépendances installées$(RESET)"
+
+install-macos: ## Installe tout + MLX pour fine-tuning (Apple Silicon)
+	@echo "$(BLUE)Installation complete macOS...$(RESET)"
+	uv sync --extra dev --extra train-mlx --extra eval
+	@echo "$(GREEN)-> Toutes les dépendances installées (avec MLX)$(RESET)"
 
 download-model: ## Télécharge le modèle de base
 	@echo "$(BLUE)Téléchargement du modèle...$(RESET)"
@@ -117,12 +122,12 @@ validate-dataset: ## Valide le dataset
 	$(PYTHON) scripts/validate_dataset.py -v
 	@echo "$(GREEN)-> Validation terminée$(RESET)"
 
-train: ## Lance le fine-tuning LoRA
+train: ## Lance le fine-tuning LoRA (macOS Apple Silicon)
 	@echo "$(BLUE)Fine-tuning LoRA...$(RESET)"
 	$(PYTHON) scripts/train_lora.py
 	@echo "$(GREEN)-> Fine-tuning terminé$(RESET)"
 
-export: ## Exporte le modèle en GGUF
+export: ## Exporte le modèle en GGUF (macOS Apple Silicon)
 	@echo "$(BLUE)Export GGUF...$(RESET)"
 	$(PYTHON) scripts/export_gguf.py
 	@echo "$(GREEN)-> Export terminé$(RESET)"

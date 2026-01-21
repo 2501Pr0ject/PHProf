@@ -11,22 +11,34 @@ PHProf est un assistant conversationnel qui aide les développeurs francophones 
 - **RAG intégré** - Enrichi avec la documentation officielle Symfony et PHP
 - **Français natif** - Réponses structurées en français
 - **Pédagogique** - Format TL;DR / Problème / Solution / Explication / À retenir
-- **Apple Silicon** - Optimisé pour Mac M1/M2/M3 avec Metal
+- **Multi-plateforme** - macOS, Linux, Windows
 
 ## Prérequis
 
-- macOS avec Apple Silicon (M1/M2/M3)
 - Python 3.11+
 - [uv](https://github.com/astral-sh/uv) (gestionnaire de paquets Python)
 - Git
 - PHP 8.x (pour la vérification syntaxique)
 - ~5 GB d'espace disque
 
-## Installation rapide
+### Plateformes supportées
+
+| Plateforme | Chat/RAG | Fine-tuning | GPU |
+|------------|----------|-------------|-----|
+| macOS Apple Silicon | Oui | Oui (MLX) | Metal |
+| macOS Intel | Oui | Non | CPU |
+| Linux | Oui | Non* | CUDA / CPU |
+| Windows | Oui | Non* | CUDA / CPU |
+
+*Fine-tuning possible avec [unsloth](https://github.com/unslothai/unsloth) ou [peft](https://github.com/huggingface/peft)
+
+## Installation
+
+### macOS (Apple Silicon)
 
 ```bash
 # 1. Cloner le projet
-git clone <url-du-repo>
+git clone https://github.com/2501Pr0ject/PHProf.git
 cd PHProf
 
 # 2. Installer les dépendances
@@ -42,6 +54,33 @@ make build-index
 # 5. Lancer le chat
 make chat
 ```
+
+### Linux / Windows
+
+```bash
+# 1. Cloner le projet
+git clone https://github.com/2501Pr0ject/PHProf.git
+cd PHProf
+
+# 2. Installer les dépendances
+uv sync
+
+# 3. (Optionnel) Recompiler llama-cpp-python avec support GPU NVIDIA
+pip uninstall llama-cpp-python -y
+CMAKE_ARGS="-DGGML_CUDA=on" pip install llama-cpp-python --no-cache-dir
+
+# 4. Télécharger le modèle
+make download-model
+
+# 5. Télécharger la documentation et construire l'index RAG
+make download-docs
+make build-index
+
+# 6. Lancer le chat
+make chat
+```
+
+> **Note**: Sans GPU NVIDIA, le chat fonctionne en mode CPU (plus lent mais fonctionnel).
 
 ## Utilisation
 
@@ -129,11 +168,14 @@ make syntax-check FILE=reports/eval_xxx.json
 | Longueur réponse | 20% | 200-800 mots |
 | Qualité pédagogique | 20% | Clarté des explications |
 
-## Fine-tuning (optionnel)
+## Fine-tuning (optionnel, macOS Apple Silicon)
 
 Pour améliorer les réponses avec vos propres exemples :
 
 ```bash
+# 0. Installer les dépendances MLX
+make install-macos
+
 # 1. Ajouter des exemples dans data/raw/
 # 2. Construire le dataset
 make build-dataset
@@ -147,6 +189,9 @@ make train
 # 5. Exporter en GGUF
 make export
 ```
+
+> **Note**: Le fine-tuning avec MLX nécessite macOS avec Apple Silicon (M1/M2/M3).
+> Pour Linux/Windows, utilisez [unsloth](https://github.com/unslothai/unsloth) ou [peft](https://github.com/huggingface/peft).
 
 ## Sources de documentation RAG
 
@@ -167,12 +212,12 @@ make export
 
 | Composant | Technologie |
 |-----------|-------------|
-| Inférence | llama-cpp-python (Metal/MPS) |
+| Inférence | llama-cpp-python (Metal / CUDA / CPU) |
 | Modèle | Qwen2.5-Coder-1.5B-Instruct (GGUF Q4_K_M) |
 | Embeddings | sentence-transformers |
 | Index | FAISS |
 | CLI | Typer + Rich |
-| Fine-tuning | mlx-lm (LoRA) |
+| Fine-tuning | mlx-lm (LoRA, macOS uniquement) |
 
 ## Commandes Make
 
@@ -182,7 +227,8 @@ make setup         # Installation complète
 make all           # Setup + RAG complet
 make chat          # Lance le chat
 make evaluate      # Lance l'évaluation
-make train         # Fine-tuning LoRA
+make train         # Fine-tuning LoRA (macOS)
+make install-macos # Installe MLX pour fine-tuning
 make lint          # Vérifie le code
 make test          # Lance les tests
 make clean         # Nettoie les fichiers temporaires

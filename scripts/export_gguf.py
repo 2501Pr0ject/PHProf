@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
-"""Export du modèle fine-tuné en GGUF pour PHProf."""
+"""Export du modèle fine-tuné en GGUF pour PHProf.
 
+Note: Ce script nécessite Apple Silicon (M1/M2/M3) et mlx-lm.
+"""
+
+import platform
 import subprocess
 import sys
 from pathlib import Path
@@ -10,9 +14,18 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from app.config import get_project_root, load_config
 
 
+def check_platform() -> None:
+    """Vérifie que la plateforme est compatible."""
+    if platform.system() != "Darwin" or platform.machine() != "arm64":
+        print("Ce script nécessite macOS avec Apple Silicon (M1/M2/M3).")
+        sys.exit(1)
+
+
 def main() -> None:
     """Point d'entrée principal."""
     import argparse
+
+    check_platform()
 
     parser = argparse.ArgumentParser(description="Export GGUF PHProf")
     parser.add_argument(

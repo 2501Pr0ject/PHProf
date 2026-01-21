@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
-"""Fine-tuning LoRA avec mlx-lm pour PHProf."""
+"""Fine-tuning LoRA avec mlx-lm pour PHProf.
 
+Note: Ce script nécessite Apple Silicon (M1/M2/M3) et mlx-lm.
+Pour Linux/Windows avec GPU NVIDIA, utilisez unsloth ou peft.
+"""
+
+import platform
 import subprocess
 import sys
 from pathlib import Path
@@ -10,9 +15,28 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from app.config import get_project_root, load_config
 
 
+def check_platform() -> None:
+    """Vérifie que la plateforme est compatible."""
+    if platform.system() != "Darwin":
+        print("Ce script nécessite macOS avec Apple Silicon.")
+        print("")
+        print("Alternatives pour Linux/Windows:")
+        print("  - unsloth: https://github.com/unslothai/unsloth")
+        print("  - peft: https://github.com/huggingface/peft")
+        sys.exit(1)
+
+    # Vérifie que c'est Apple Silicon
+    if platform.machine() != "arm64":
+        print("Ce script nécessite Apple Silicon (M1/M2/M3).")
+        print("Les Mac Intel ne sont pas supportés pour le fine-tuning MLX.")
+        sys.exit(1)
+
+
 def main() -> None:
     """Point d'entrée principal."""
     import argparse
+
+    check_platform()
 
     parser = argparse.ArgumentParser(description="Fine-tuning LoRA PHProf")
     parser.add_argument(
