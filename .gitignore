@@ -67,6 +67,9 @@ rag/index/
 # Reports (generated)
 reports/*.json
 
+# Docs (private)
+docs/
+
 # OS
 .DS_Store
 Thumbs.db
