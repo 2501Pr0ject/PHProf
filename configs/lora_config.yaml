@@ -1,0 +1,64 @@
+# PHProf - Configuration LoRA
+# Paramètres pour le fine-tuning avec mlx-lm
+
+training:
+  # Modèle de base
+  base_model: "Qwen/Qwen2.5-Coder-1.5B-Instruct"
+
+  # Chemins
+  data_dir: "data/mlx_train"
+  output_dir: "models/lora_adapters"
+  checkpoints_dir: "models/checkpoints"
+
+  # Hyperparamètres
+  iters: 100          # Nombre d'itérations (ajuster selon dataset)
+  batch_size: 1       # Taille du batch (limité par RAM)
+  learning_rate: 1.0e-5
+  warmup_steps: 10
+
+  # LoRA
+  lora:
+    rank: 8           # Rang de la décomposition
+    alpha: 16         # Scaling factor
+    dropout: 0.05
+    target_modules:
+      - "q_proj"
+      - "v_proj"
+      - "k_proj"
+      - "o_proj"
+      - "gate_proj"
+      - "up_proj"
+      - "down_proj"
+
+  # Validation
+  val_batches: 25
+  steps_per_eval: 10
+  steps_per_report: 5
+
+  # Sauvegarde
+  save_every: 50
+  max_checkpoints: 3
+
+  # Reproductibilité
+  seed: 42
+
+export:
+  # Export GGUF
+  output_file: "models/phpprof-1.5b-q4_k_m.gguf"
+  quantization: "q4_k_m"
+
+  # Merge LoRA
+  merge_method: "linear"
+  merge_scale: 1.0
+
+mlx:
+  # Configuration MLX (Apple Silicon)
+  use_metal: true
+  memory_limit_gb: 12  # Limite mémoire GPU
+  grad_checkpoint: true  # Économie de mémoire
+
+logging:
+  # Logging
+  level: "INFO"
+  log_file: "reports/training.log"
+  tensorboard: false  # Optionnel

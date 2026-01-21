@@ -1,0 +1,105 @@
+{
+  "name": "PHProf Evaluation Rubric",
+  "version": "1.0",
+  "description": "Critères d'évaluation pour les réponses PHProf",
+  "criteria": {
+    "language": {
+      "name": "Langue française",
+      "weight": 0.20,
+      "description": "La réponse doit être intégralement en français",
+      "scoring": {
+        "1.0": "100% en français, vocabulaire technique correct",
+        "0.8": "Majoritairement français avec quelques termes anglais acceptables",
+        "0.5": "Mélange français/anglais",
+        "0.0": "Principalement en anglais"
+      }
+    },
+    "code_blocks": {
+      "name": "Blocs de code",
+      "weight": 0.20,
+      "description": "Présence de code PHP/Symfony fonctionnel",
+      "scoring": {
+        "1.0": "Code PHP bien formaté avec ```php, syntaxe correcte",
+        "0.7": "Code présent mais formatage imparfait",
+        "0.3": "Code présent mais incomplet ou avec erreurs",
+        "0.0": "Pas de code fourni"
+      }
+    },
+    "topic_coverage": {
+      "name": "Couverture du sujet",
+      "weight": 0.20,
+      "description": "Les concepts clés sont abordés et expliqués",
+      "scoring": {
+        "1.0": "Tous les concepts attendus sont couverts en détail",
+        "0.7": "La majorité des concepts sont abordés",
+        "0.4": "Couverture partielle du sujet",
+        "0.0": "Hors sujet ou incomplet"
+      }
+    },
+    "response_length": {
+      "name": "Longueur de réponse",
+      "weight": 0.20,
+      "description": "Réponse suffisamment détaillée (200-800 mots)",
+      "scoring": {
+        "1.0": "200-800 mots, bien équilibré",
+        "0.8": "100-200 ou 800-1200 mots",
+        "0.5": "50-100 mots (trop court) ou >1200 (trop long)",
+        "0.2": "<50 mots"
+      }
+    },
+    "pedagogical_quality": {
+      "name": "Qualité pédagogique",
+      "weight": 0.20,
+      "description": "Explications claires, progressives et accessibles",
+      "scoring": {
+        "1.0": "Explications excellentes, exemples pertinents, progression logique",
+        "0.7": "Bonnes explications, quelques exemples",
+        "0.4": "Explications basiques ou confuses",
+        "0.0": "Pas d'explication, juste du code"
+      }
+    }
+  },
+  "bonus": {
+    "structured_format": {
+      "name": "Format structuré",
+      "max_bonus": 0.20,
+      "description": "Respect du format TL;DR / Problème / Solution / Explication / À retenir",
+      "sections": ["TL;DR", "Problème", "Solution", "Explication", "À retenir"]
+    },
+    "security_mention": {
+      "name": "Mention sécurité",
+      "max_bonus": 0.05,
+      "description": "Mention des considérations de sécurité quand pertinent"
+    },
+    "best_practices": {
+      "name": "Bonnes pratiques",
+      "max_bonus": 0.05,
+      "description": "Mention des standards PSR, patterns recommandés"
+    }
+  },
+  "categories": [
+    "php_basics",
+    "php_modern",
+    "symfony_core",
+    "doctrine",
+    "forms",
+    "security",
+    "testing",
+    "architecture",
+    "debug",
+    "ddd_advanced",
+    "messenger_advanced",
+    "doctrine_advanced",
+    "security_advanced",
+    "api_advanced",
+    "performance_advanced",
+    "architecture_advanced",
+    "testing_advanced",
+    "debug_advanced",
+    "cqrs_advanced",
+    "symfony_advanced"
+  ],
+  "passing_score": 3.0,
+  "excellent_score": 4.0,
+  "advanced_threshold": 4.2
+}

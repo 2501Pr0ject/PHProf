@@ -1,0 +1,50 @@
+{"prompt": "Explique-moi la différence entre == et === en PHP.", "category": "php_basics", "expected_concepts": ["comparaison", "type", "strict", "loose", "coercion"]}
+{"prompt": "Comment déclarer une classe en PHP 8 avec un constructeur promu ?", "category": "php_modern", "expected_concepts": ["class", "constructor", "promotion", "readonly", "propriété"]}
+{"prompt": "Qu'est-ce qu'un trait en PHP et quand l'utiliser ?", "category": "php_basics", "expected_concepts": ["trait", "réutilisation", "multiple", "héritage", "use"]}
+{"prompt": "Explique-moi le typage strict en PHP 8 avec declare(strict_types=1).", "category": "php_modern", "expected_concepts": ["declare", "strict_types", "type", "erreur", "TypeError"]}
+{"prompt": "Comment fonctionne l'autoloading PSR-4 avec Composer ?", "category": "php_basics", "expected_concepts": ["autoload", "PSR-4", "namespace", "composer.json", "classmap"]}
+{"prompt": "Qu'est-ce qu'une enum en PHP 8.1 et comment l'utiliser ?", "category": "php_modern", "expected_concepts": ["enum", "cases", "backed", "string", "int"]}
+{"prompt": "Explique-moi les attributs PHP 8 et donne un exemple.", "category": "php_modern", "expected_concepts": ["#[Attribute]", "réflexion", "métadonnées", "annotation"]}
+{"prompt": "Comment gérer les exceptions en PHP avec try/catch/finally ?", "category": "php_basics", "expected_concepts": ["Exception", "try", "catch", "finally", "throw"]}
+{"prompt": "Qu'est-ce que l'opérateur nullsafe ?-> en PHP 8 ?", "category": "php_modern", "expected_concepts": ["nullsafe", "?->", "null", "chaînage", "optionnel"]}
+{"prompt": "Comment utiliser match() au lieu de switch en PHP 8 ?", "category": "php_modern", "expected_concepts": ["match", "expression", "strict", "return", "default"]}
+{"prompt": "Explique-moi les fibres en PHP 8.1.", "category": "php_modern", "expected_concepts": ["Fiber", "suspend", "resume", "asynchrone", "coroutine"]}
+{"prompt": "Comment créer une interface en PHP et pourquoi l'utiliser ?", "category": "php_basics", "expected_concepts": ["interface", "implements", "contrat", "abstraction", "méthode"]}
+{"prompt": "Qu'est-ce que les named arguments en PHP 8 ?", "category": "php_modern", "expected_concepts": ["named", "argument", "paramètre", "ordre", "lisibilité"]}
+{"prompt": "Comment fonctionne le routing dans Symfony ?", "category": "symfony_core", "expected_concepts": ["Route", "Controller", "annotation", "yaml", "paramètre"]}
+{"prompt": "Explique-moi l'injection de dépendances dans Symfony.", "category": "symfony_core", "expected_concepts": ["service", "container", "autowiring", "injection", "dépendance"]}
+{"prompt": "Comment créer un service dans Symfony ?", "category": "symfony_core", "expected_concepts": ["services.yaml", "autowire", "autoconfigure", "public", "privé"]}
+{"prompt": "Qu'est-ce qu'un Controller dans Symfony et comment le créer ?", "category": "symfony_core", "expected_concepts": ["AbstractController", "Route", "Response", "render", "Twig"]}
+{"prompt": "Comment utiliser les événements et listeners dans Symfony ?", "category": "symfony_core", "expected_concepts": ["EventSubscriber", "EventDispatcher", "listener", "kernel", "événement"]}
+{"prompt": "Explique-moi le cycle de vie d'une requête Symfony.", "category": "symfony_core", "expected_concepts": ["Kernel", "Request", "Response", "Controller", "événements"]}
+{"prompt": "Comment configurer le container de services Symfony ?", "category": "symfony_core", "expected_concepts": ["services.yaml", "bind", "arguments", "tags", "alias"]}
+{"prompt": "Qu'est-ce qu'une entité Doctrine et comment la créer ?", "category": "doctrine", "expected_concepts": ["Entity", "ORM", "mapping", "annotation", "propriété"]}
+{"prompt": "Comment créer une relation ManyToOne avec Doctrine ?", "category": "doctrine", "expected_concepts": ["ManyToOne", "JoinColumn", "inversedBy", "mappedBy", "cascade"]}
+{"prompt": "Explique-moi les repositories Doctrine personnalisés.", "category": "doctrine", "expected_concepts": ["Repository", "EntityRepository", "QueryBuilder", "findBy", "custom"]}
+{"prompt": "Comment utiliser le QueryBuilder Doctrine ?", "category": "doctrine", "expected_concepts": ["QueryBuilder", "select", "where", "join", "getQuery"]}
+{"prompt": "Qu'est-ce que DQL et comment l'utiliser ?", "category": "doctrine", "expected_concepts": ["DQL", "Query", "createQuery", "setParameter", "getResult"]}
+{"prompt": "Comment gérer les migrations Doctrine dans Symfony ?", "category": "doctrine", "expected_concepts": ["migration", "make:migration", "migrate", "diff", "version"]}
+{"prompt": "Explique-moi les lifecycle callbacks Doctrine.", "category": "doctrine", "expected_concepts": ["PrePersist", "PostUpdate", "lifecycle", "callback", "événement"]}
+{"prompt": "Comment créer un formulaire Symfony ?", "category": "forms", "expected_concepts": ["FormType", "createForm", "handleRequest", "isSubmitted", "isValid"]}
+{"prompt": "Comment valider les données d'un formulaire Symfony ?", "category": "forms", "expected_concepts": ["Assert", "Constraint", "NotBlank", "Length", "validation"]}
+{"prompt": "Qu'est-ce qu'un Data Transformer dans Symfony Forms ?", "category": "forms", "expected_concepts": ["DataTransformer", "transform", "reverseTransform", "ModelData", "ViewData"]}
+{"prompt": "Comment créer un type de formulaire personnalisé ?", "category": "forms", "expected_concepts": ["AbstractType", "buildForm", "configureOptions", "FormBuilder", "extends"]}
+{"prompt": "Explique-moi le système de sécurité Symfony.", "category": "security", "expected_concepts": ["firewall", "authenticator", "User", "Security", "access_control"]}
+{"prompt": "Comment implémenter l'authentification dans Symfony ?", "category": "security", "expected_concepts": ["Authenticator", "passport", "UserProvider", "login", "logout"]}
+{"prompt": "Qu'est-ce qu'un Voter dans Symfony et comment l'utiliser ?", "category": "security", "expected_concepts": ["Voter", "VoterInterface", "supports", "voteOnAttribute", "isGranted"]}
+{"prompt": "Comment gérer les rôles et permissions dans Symfony ?", "category": "security", "expected_concepts": ["ROLE_USER", "ROLE_ADMIN", "hierarchy", "access_control", "denyAccessUnlessGranted"]}
+{"prompt": "Comment protéger contre les attaques CSRF dans Symfony ?", "category": "security", "expected_concepts": ["CSRF", "token", "csrf_protection", "isCsrfTokenValid", "formulaire"]}
+{"prompt": "Explique-moi le hashage des mots de passe dans Symfony.", "category": "security", "expected_concepts": ["PasswordHasher", "hashPassword", "isPasswordValid", "bcrypt", "argon2"]}
+{"prompt": "Comment écrire un test unitaire PHPUnit en Symfony ?", "category": "testing", "expected_concepts": ["TestCase", "assertEquals", "assertTrue", "mock", "PHPUnit"]}
+{"prompt": "Comment tester un Controller Symfony ?", "category": "testing", "expected_concepts": ["WebTestCase", "createClient", "request", "assertResponseIsSuccessful", "crawler"]}
+{"prompt": "Qu'est-ce qu'un mock et comment l'utiliser dans PHPUnit ?", "category": "testing", "expected_concepts": ["mock", "createMock", "expects", "willReturn", "method"]}
+{"prompt": "Comment utiliser les fixtures dans Symfony ?", "category": "testing", "expected_concepts": ["Fixture", "load", "persist", "flush", "DataFixtures"]}
+{"prompt": "Explique-moi le pattern Repository dans Symfony.", "category": "architecture", "expected_concepts": ["Repository", "séparation", "couche", "données", "abstraction"]}
+{"prompt": "Qu'est-ce que CQRS et comment l'implémenter avec Symfony ?", "category": "architecture", "expected_concepts": ["Command", "Query", "Handler", "Bus", "séparation"]}
+{"prompt": "Comment utiliser Symfony Messenger pour les messages asynchrones ?", "category": "architecture", "expected_concepts": ["Messenger", "Message", "Handler", "transport", "async"]}
+{"prompt": "Explique-moi l'architecture hexagonale avec Symfony.", "category": "architecture", "expected_concepts": ["port", "adapter", "domain", "infrastructure", "application"]}
+{"prompt": "Ce code Symfony ne fonctionne pas, pourquoi ?\n```php\n$user = $repository->find($id);\necho $user->getName();\n```", "category": "debug", "expected_concepts": ["null", "vérification", "find", "exception", "typage"]}
+{"prompt": "Mon formulaire Symfony ne se soumet pas correctement. Voici mon code:\n```php\n$form = $this->createForm(UserType::class);\nif ($form->isValid()) {\n    // ...\n}\n```", "category": "debug", "expected_concepts": ["handleRequest", "isSubmitted", "Request", "form", "validation"]}
+{"prompt": "J'ai une erreur 'Service not found' dans Symfony. Comment la résoudre ?", "category": "debug", "expected_concepts": ["autowiring", "services.yaml", "public", "alias", "container"]}
+{"prompt": "Ma relation Doctrine ne charge pas les données liées. Comment corriger ?", "category": "debug", "expected_concepts": ["lazy loading", "fetch", "EAGER", "join", "proxy"]}
+{"prompt": "Comment optimiser les performances d'une requête Doctrine lente ?", "category": "debug", "expected_concepts": ["index", "N+1", "join", "select", "pagination"]}

@@ -1,0 +1,188 @@
+# PHProf - Configuration du Dataset
+# Paramètres pour la génération et validation du dataset d'entraînement
+
+dataset:
+  # Chemins
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  train_dir: "data/mlx_train"
+
+  # Fichiers de sortie
+  train_file: "train.jsonl"
+  valid_file: "valid.jsonl"
+  combined_file: "dataset.jsonl"
+
+  # Split train/valid
+  train_ratio: 0.9
+  seed: 42
+
+categories:
+  # Catégories de questions/réponses
+  debug:
+    description: "Correction de code PHP/Symfony bugué"
+    weight: 0.25
+    examples_target: 50
+
+  concepts:
+    description: "Explication de concepts PHP/Symfony"
+    weight: 0.30
+    examples_target: 60
+
+  exercises:
+    description: "Exercices pratiques avec solutions"
+    weight: 0.15
+    examples_target: 30
+
+  architecture:
+    description: "Patterns et architecture Symfony"
+    weight: 0.15
+    examples_target: 30
+
+  # Catégories avancées
+  ddd_advanced:
+    description: "Domain-Driven Design avancé"
+    weight: 0.05
+    examples_target: 10
+
+  performance_advanced:
+    description: "Optimisation et performance"
+    weight: 0.05
+    examples_target: 10
+
+  security_advanced:
+    description: "Sécurité avancée (JWT, OAuth, etc.)"
+    weight: 0.05
+    examples_target: 10
+
+topics:
+  # Topics PHP
+  php_basics:
+    - "types et typage strict"
+    - "classes et objets"
+    - "interfaces et traits"
+    - "namespaces et autoloading"
+    - "exceptions et gestion d'erreurs"
+
+  php_modern:
+    - "attributs PHP 8"
+    - "enums"
+    - "named arguments"
+    - "match expression"
+    - "constructor promotion"
+    - "readonly properties"
+    - "fibres"
+
+  # Topics Symfony
+  symfony_core:
+    - "routing et controllers"
+    - "injection de dépendances"
+    - "services et container"
+    - "events et listeners"
+    - "middleware et kernel"
+
+  symfony_forms:
+    - "création de formulaires"
+    - "validation"
+    - "types personnalisés"
+    - "data transformers"
+
+  symfony_security:
+    - "authentification"
+    - "autorisation et voters"
+    - "firewalls"
+    - "CSRF protection"
+    - "password hashing"
+
+  doctrine:
+    - "entités et mapping"
+    - "repositories"
+    - "DQL et QueryBuilder"
+    - "relations et associations"
+    - "migrations"
+    - "lifecycle events"
+
+  testing:
+    - "tests unitaires PHPUnit"
+    - "tests fonctionnels"
+    - "mocks et stubs"
+    - "fixtures"
+    - "WebTestCase"
+
+  # Topics avancés
+  ddd_advanced:
+    - "Aggregate Root et Domain Events"
+    - "Value Objects et Entities"
+    - "Bounded Contexts"
+    - "Event Sourcing"
+    - "CQRS complet"
+    - "Specification pattern"
+
+  messenger_advanced:
+    - "Transports et routing"
+    - "Retry et failure handling"
+    - "Middleware personnalisés"
+    - "Transactions distribuées"
+    - "Dead letter queues"
+
+  doctrine_advanced:
+    - "Second Level Cache"
+    - "Batch processing"
+    - "Stratégies d'héritage"
+    - "Filtres globaux"
+    - "Read replicas"
+    - "Optimistic locking"
+
+  security_advanced:
+    - "JWT et refresh tokens"
+    - "OAuth2 / OpenID Connect"
+    - "Rate limiting"
+    - "Timing attacks"
+    - "Content Security Policy"
+
+  performance_advanced:
+    - "Profiling avec Blackfire"
+    - "OPcache et preloading"
+    - "Cache stampede protection"
+    - "N+1 queries"
+    - "Database indexing"
+
+  architecture_advanced:
+    - "Architecture hexagonale"
+    - "Monorepo multi-bundles"
+    - "Feature flags"
+    - "Long running processes"
+    - "Circuit breaker pattern"
+
+difficulty:
+  beginner:
+    description: "Concepts de base, syntaxe simple"
+    weight: 0.45
+
+  intermediate:
+    description: "Patterns courants, bonnes pratiques"
+    weight: 0.40
+
+  advanced:
+    description: "Architecture complexe, optimisation"
+    weight: 0.15
+
+validation:
+  # Règles de validation du dataset
+  required_fields:
+    - "messages"
+    - "metadata"
+
+  metadata_fields:
+    - "category"
+    - "topic"
+    - "difficulty"
+    - "tags"
+
+  quality_checks:
+    - "french_language"
+    - "code_blocks_present"
+    - "structured_format"
+    - "min_response_length"
+
+  min_response_length: 200  # caractères
+  max_response_length: 3000

@@ -1,0 +1,73 @@
+# PHProf - Configuration du modèle
+# Assistant pédagogique IA local pour PHP et Symfony
+
+model:
+  # Modèle de base (téléchargé via HuggingFace)
+  name: "qwen2.5-coder-1.5b-instruct"
+  quantization: "q4_k_m"
+  file: "qwen2.5-coder-1.5b-instruct-q4_k_m.gguf"
+  hf_repo: "Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF"
+
+  # Modèle fine-tuné (après entraînement)
+  finetuned_file: "phpprof-1.5b-q4_k_m.gguf"
+
+inference:
+  # Paramètres llama.cpp
+  n_ctx: 4096          # Fenêtre de contexte
+  n_predict: 1024      # Tokens max en sortie
+  n_gpu_layers: -1     # -1 = toutes les couches sur GPU (Metal)
+
+  # Sampling
+  temperature: 0.7
+  top_p: 0.9
+  top_k: 40
+  repeat_penalty: 1.1
+
+  # Reproductibilité
+  seed: 42
+
+prompt:
+  # Template ChatML (format Qwen)
+  template: |
+    <|im_start|>system
+    {system}<|im_end|>
+    <|im_start|>user
+    {user}<|im_end|>
+    <|im_start|>assistant
+
+  # Prompt système en français
+  system: |
+    Tu es PHProf, un assistant pédagogique expert en PHP et Symfony.
+
+    Ta mission est d'aider les développeurs francophones à maîtriser PHP moderne (8.x) et le framework Symfony.
+
+    ## Règles strictes
+
+    1. **Langue** : Réponds TOUJOURS en français
+    2. **Format** : Structure TOUTES tes réponses ainsi :
+       - **TL;DR** : Résumé en 1-2 phrases
+       - **Problème** : Description du problème ou concept
+       - **Solution** : Code PHP/Symfony fonctionnel
+       - **Explication** : Détails pédagogiques
+       - **À retenir** : Points clés à mémoriser
+    3. **Code** : Utilise des blocs ```php avec du code moderne (PHP 8.x, PSR-12)
+    4. **Bonnes pratiques** : Applique les standards Symfony et les design patterns appropriés
+    5. **Sécurité** : Mentionne TOUJOURS les considérations de sécurité pertinentes
+
+    ## Domaines d'expertise
+
+    - PHP 8.x : types, attributs, enums, fibres, match, named arguments
+    - Symfony : routing, controllers, services, Doctrine, Forms, Security, Twig
+    - Doctrine ORM : entités, repositories, DQL, migrations
+    - Architecture : DDD, CQRS, Event Sourcing, Hexagonal
+    - Tests : PHPUnit, Symfony WebTestCase, mocks
+    - Outils : Composer, PHP-CS-Fixer, PHPStan, Rector
+
+    ## Contexte RAG
+
+    Si du contexte documentaire est fourni entre balises <reference_documentation>, utilise-le en priorité pour enrichir ta réponse avec des informations précises et à jour.
+
+paths:
+  models_dir: "models"
+  vendor_dir: "vendor/llama.cpp"
+  llama_cli: "vendor/llama.cpp/build/bin/llama-cli"

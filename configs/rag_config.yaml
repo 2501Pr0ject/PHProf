@@ -1,0 +1,367 @@
+# PHProf - Configuration RAG Enrichie
+# Retrieval-Augmented Generation pour la documentation PHP/Symfony
+
+sources:
+  # ==========================================================================
+  # SYMFONY CORE
+  # ==========================================================================
+
+  symfony_docs:
+    name: "Symfony Docs"
+    type: "git"
+    url: "https://github.com/symfony/symfony-docs.git"
+    branch: "7.2"
+    local_path: "rag/docs/symfony"
+    include_patterns:
+      - "*.rst"
+    exclude_patterns:
+      - "_build/**"
+      - "contributing/**"
+      - "_images/**"
+      - "translation/**"
+    base_url: "https://symfony.com/doc/current"
+    priority: 1  # Haute priorité
+
+  symfony_best_practices:
+    name: "Symfony Best Practices"
+    type: "git"
+    url: "https://github.com/symfony/symfony-docs.git"
+    branch: "7.2"
+    local_path: "rag/docs/symfony-best"
+    include_patterns:
+      - "best_practices/**/*.rst"
+    base_url: "https://symfony.com/doc/current/best_practices"
+    priority: 1
+
+  # ==========================================================================
+  # DOCTRINE
+  # ==========================================================================
+
+  doctrine_orm:
+    name: "Doctrine ORM"
+    type: "git"
+    url: "https://github.com/doctrine/orm.git"
+    branch: "3.6.x"
+    local_path: "rag/docs/doctrine-orm"
+    include_patterns:
+      - "docs/en/**/*.rst"
+    base_url: "https://www.doctrine-project.org/projects/doctrine-orm/en/3.6"
+    priority: 1
+
+  doctrine_dbal:
+    name: "Doctrine DBAL"
+    type: "git"
+    url: "https://github.com/doctrine/dbal.git"
+    branch: "4.5.x"
+    local_path: "rag/docs/doctrine-dbal"
+    include_patterns:
+      - "docs/en/**/*.rst"
+    base_url: "https://www.doctrine-project.org/projects/doctrine-dbal/en/current"
+    priority: 2
+
+  doctrine_migrations:
+    name: "Doctrine Migrations"
+    type: "git"
+    url: "https://github.com/doctrine/migrations.git"
+    branch: "3.8.x"
+    local_path: "rag/docs/doctrine-migrations"
+    include_patterns:
+      - "docs/en/**/*.rst"
+    base_url: "https://www.doctrine-project.org/projects/doctrine-migrations/en/current"
+    priority: 2
+
+  # ==========================================================================
+  # API PLATFORM
+  # ==========================================================================
+
+  api_platform:
+    name: "API Platform"
+    type: "git"
+    url: "https://github.com/api-platform/docs.git"
+    branch: "main"
+    local_path: "rag/docs/api-platform"
+    include_patterns:
+      - "**/*.md"
+      - "**/*.mdx"
+    exclude_patterns:
+      - "node_modules/**"
+      - ".github/**"
+    base_url: "https://api-platform.com/docs"
+    priority: 1
+
+  # ==========================================================================
+  # PHP CORE
+  # ==========================================================================
+
+  php_manual:
+    name: "PHP Manual"
+    type: "git"
+    url: "https://github.com/php/doc-en.git"
+    branch: "master"
+    local_path: "rag/docs/php-manual"
+    include_patterns:
+      - "reference/**/*.xml"
+      - "language/**/*.xml"
+      - "features/**/*.xml"
+    exclude_patterns:
+      - "reference/svn/**"
+      - "reference/yaz/**"
+      - "reference/fann/**"
+    base_url: "https://www.php.net/manual/en"
+    priority: 1  # Référence officielle = priorité max
+
+  php_the_right_way:
+    name: "PHP: The Right Way"
+    type: "git"
+    url: "https://github.com/codeguy/php-the-right-way.git"
+    branch: "gh-pages"
+    local_path: "rag/docs/php-right-way"
+    include_patterns:
+      - "_posts/*.md"
+      - "pages/*.md"
+    base_url: "https://phptherightway.com"
+    priority: 2
+
+  php_fig_standards:
+    name: "PHP-FIG PSR Standards"
+    type: "git"
+    url: "https://github.com/php-fig/fig-standards.git"
+    branch: "master"
+    local_path: "rag/docs/php-fig"
+    include_patterns:
+      - "accepted/**/*.md"
+      - "proposed/**/*.md"
+    base_url: "https://www.php-fig.org/psr"
+    priority: 2
+
+  design_patterns_php:
+    name: "Design Patterns PHP"
+    type: "git"
+    url: "https://github.com/DesignPatternsPHP/DesignPatternsPHP.git"
+    branch: "main"
+    local_path: "rag/docs/design-patterns"
+    include_patterns:
+      - "**/*.md"
+      - "**/*.rst"
+    exclude_patterns:
+      - "vendor/**"
+    base_url: "https://designpatternsphp.readthedocs.io"
+    priority: 2
+
+  composer_docs:
+    name: "Composer Documentation"
+    type: "git"
+    url: "https://github.com/composer/composer.git"
+    branch: "main"
+    local_path: "rag/docs/composer"
+    include_patterns:
+      - "doc/**/*.md"
+    base_url: "https://getcomposer.org/doc"
+    priority: 1  # Fondamental pour PHP moderne
+
+  # ==========================================================================
+  # TESTING
+  # ==========================================================================
+
+  phpunit_docs:
+    name: "PHPUnit Documentation"
+    type: "git"
+    url: "https://github.com/sebastianbergmann/phpunit-documentation-english.git"
+    branch: "12.2"
+    local_path: "rag/docs/phpunit"
+    include_patterns:
+      - "src/**/*.rst"
+    base_url: "https://docs.phpunit.de"
+    priority: 2
+
+  # ==========================================================================
+  # TEMPLATES
+  # ==========================================================================
+
+  twig_docs:
+    name: "Twig Documentation"
+    type: "git"
+    url: "https://github.com/twigphp/Twig.git"
+    branch: "3.x"
+    local_path: "rag/docs/twig"
+    include_patterns:
+      - "doc/**/*.rst"
+    base_url: "https://twig.symfony.com/doc/3.x"
+    priority: 2
+
+  # ==========================================================================
+  # ADVANCED SYMFONY COMPONENTS
+  # ==========================================================================
+
+  symfony_messenger:
+    name: "Symfony Messenger"
+    type: "git"
+    url: "https://github.com/symfony/symfony-docs.git"
+    branch: "7.2"
+    local_path: "rag/docs/symfony-messenger"
+    include_patterns:
+      - "messenger/**/*.rst"
+      - "messenger.rst"
+    base_url: "https://symfony.com/doc/current/messenger"
+    priority: 1
+
+  symfony_security:
+    name: "Symfony Security"
+    type: "git"
+    url: "https://github.com/symfony/symfony-docs.git"
+    branch: "7.2"
+    local_path: "rag/docs/symfony-security"
+    include_patterns:
+      - "security/**/*.rst"
+      - "security.rst"
+    base_url: "https://symfony.com/doc/current/security"
+    priority: 1
+
+  symfony_workflow:
+    name: "Symfony Workflow"
+    type: "git"
+    url: "https://github.com/symfony/symfony-docs.git"
+    branch: "7.2"
+    local_path: "rag/docs/symfony-workflow"
+    include_patterns:
+      - "workflow/**/*.rst"
+      - "workflow.rst"
+    base_url: "https://symfony.com/doc/current/workflow"
+    priority: 2
+
+  # ==========================================================================
+  # ADVANCED RESOURCES
+  # ==========================================================================
+
+  symfony_casts_articles:
+    name: "SymfonyCasts Free Tutorials"
+    type: "git"
+    url: "https://github.com/SymfonyCasts/symfony6.git"
+    branch: "main"
+    local_path: "rag/docs/symfonycasts"
+    include_patterns:
+      - "**/*.md"
+      - "**/*.rst"
+    exclude_patterns:
+      - "vendor/**"
+      - "node_modules/**"
+    base_url: "https://symfonycasts.com"
+    priority: 3
+
+  # ==========================================================================
+  # DDD & ARCHITECTURE
+  # ==========================================================================
+
+  ddd_php:
+    name: "DDD in PHP"
+    type: "git"
+    url: "https://github.com/dddinphp/blog-cqrs.git"
+    branch: "master"
+    local_path: "rag/docs/ddd-php"
+    include_patterns:
+      - "**/*.md"
+    base_url: "https://dddinphp.org"
+    priority: 3
+
+# =============================================================================
+# EMBEDDINGS
+# =============================================================================
+
+embeddings:
+  # Modèle d'embeddings multilingue (bon pour le français)
+  model: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  dimension: 384
+  device: "mps"  # Metal Performance Shaders (Apple Silicon)
+  normalize: true
+  batch_size: 64  # Pour le traitement par lots
+
+# =============================================================================
+# INDEX
+# =============================================================================
+
+index:
+  # Configuration FAISS
+  type: "IndexFlatIP"  # Inner Product (avec normalisation = cosine similarity)
+  path: "rag/index/phpprof.faiss"
+  metadata_path: "rag/index/metadata.pkl"
+
+  # Index secondaire par catégorie (optionnel)
+  category_indexes:
+    enabled: false
+    categories:
+      - "symfony"
+      - "doctrine"
+      - "php"
+      - "testing"
+      - "architecture"
+
+# =============================================================================
+# CHUNKING
+# =============================================================================
+
+chunking:
+  # Stratégie de découpage
+  strategy: "markdown_sections"
+
+  # Tailles en tokens (approximatif: 1 token ≈ 4 caractères)
+  min_tokens: 100
+  max_tokens: 800
+  target_tokens: 400
+  overlap_tokens: 50
+
+  # Traitement spécial pour le code
+  code_handling:
+    preserve_blocks: true      # Ne pas couper au milieu d'un bloc de code
+    max_code_block_tokens: 600 # Limite pour un seul bloc de code
+
+  # Métadonnées enrichies
+  metadata:
+    include_source: true
+    include_heading_hierarchy: true
+    include_code_language: true
+
+# =============================================================================
+# RETRIEVAL
+# =============================================================================
+
+retrieval:
+  # Paramètres de recherche
+  top_k: 6              # Augmenté pour plus de diversité
+  initial_k: 20         # Plus de candidats pour le reranking
+  score_threshold: 0.25 # Seuil légèrement réduit
+  max_citations: 5      # Plus de citations possibles
+
+  # Diversification des résultats
+  diversity:
+    enabled: true
+    min_sources: 2      # Au moins 2 sources différentes
+    max_per_source: 3   # Max 3 chunks de la même source
+
+  # Reranker (optionnel - à activer si besoin)
+  reranker:
+    enabled: false
+    model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+    top_k: 6
+
+  # Filtrage par priorité
+  priority_boost:
+    enabled: true
+    boost_factor: 1.2   # Les sources priorité 1 sont boostées de 20%
+
+# =============================================================================
+# PROMPT INJECTION PROTECTION
+# =============================================================================
+
+prompt_injection:
+  wrapper_tag: "reference_documentation"
+  sanitize: true
+  max_context_tokens: 2000  # Limite le contexte injecté
+
+# =============================================================================
+# CACHE
+# =============================================================================
+
+cache:
+  enabled: true
+  ttl: 3600  # 1 heure
+  max_entries: 1000

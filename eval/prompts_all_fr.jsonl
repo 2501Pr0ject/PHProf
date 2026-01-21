@@ -1,0 +1,88 @@
+{"prompt": "Explique-moi la différence entre == et === en PHP.", "category": "php_basics", "expected_concepts": ["comparaison", "type", "strict", "loose", "coercion"]}
+{"prompt": "Comment déclarer une classe en PHP 8 avec un constructeur promu ?", "category": "php_modern", "expected_concepts": ["class", "constructor", "promotion", "readonly", "propriété"]}
+{"prompt": "Qu'est-ce qu'un trait en PHP et quand l'utiliser ?", "category": "php_basics", "expected_concepts": ["trait", "réutilisation", "multiple", "héritage", "use"]}
+{"prompt": "Explique-moi le typage strict en PHP 8 avec declare(strict_types=1).", "category": "php_modern", "expected_concepts": ["declare", "strict_types", "type", "erreur", "TypeError"]}
+{"prompt": "Comment fonctionne l'autoloading PSR-4 avec Composer ?", "category": "php_basics", "expected_concepts": ["autoload", "PSR-4", "namespace", "composer.json", "classmap"]}
+{"prompt": "Qu'est-ce qu'une enum en PHP 8.1 et comment l'utiliser ?", "category": "php_modern", "expected_concepts": ["enum", "cases", "backed", "string", "int"]}
+{"prompt": "Explique-moi les attributs PHP 8 et donne un exemple.", "category": "php_modern", "expected_concepts": ["#[Attribute]", "réflexion", "métadonnées", "annotation"]}
+{"prompt": "Comment gérer les exceptions en PHP avec try/catch/finally ?", "category": "php_basics", "expected_concepts": ["Exception", "try", "catch", "finally", "throw"]}
+{"prompt": "Qu'est-ce que l'opérateur nullsafe ?-> en PHP 8 ?", "category": "php_modern", "expected_concepts": ["nullsafe", "?->", "null", "chaînage", "optionnel"]}
+{"prompt": "Comment utiliser match() au lieu de switch en PHP 8 ?", "category": "php_modern", "expected_concepts": ["match", "expression", "strict", "return", "default"]}
+{"prompt": "Explique-moi les fibres en PHP 8.1.", "category": "php_modern", "expected_concepts": ["Fiber", "suspend", "resume", "asynchrone", "coroutine"]}
+{"prompt": "Comment créer une interface en PHP et pourquoi l'utiliser ?", "category": "php_basics", "expected_concepts": ["interface", "implements", "contrat", "abstraction", "méthode"]}
+{"prompt": "Qu'est-ce que les named arguments en PHP 8 ?", "category": "php_modern", "expected_concepts": ["named", "argument", "paramètre", "ordre", "lisibilité"]}
+{"prompt": "Comment fonctionne le routing dans Symfony ?", "category": "symfony_core", "expected_concepts": ["Route", "Controller", "annotation", "yaml", "paramètre"]}
+{"prompt": "Explique-moi l'injection de dépendances dans Symfony.", "category": "symfony_core", "expected_concepts": ["service", "container", "autowiring", "injection", "dépendance"]}
+{"prompt": "Comment créer un service dans Symfony ?", "category": "symfony_core", "expected_concepts": ["services.yaml", "autowire", "autoconfigure", "public", "privé"]}
+{"prompt": "Qu'est-ce qu'un Controller dans Symfony et comment le créer ?", "category": "symfony_core", "expected_concepts": ["AbstractController", "Route", "Response", "render", "Twig"]}
+{"prompt": "Comment utiliser les événements et listeners dans Symfony ?", "category": "symfony_core", "expected_concepts": ["EventSubscriber", "EventDispatcher", "listener", "kernel", "événement"]}
+{"prompt": "Explique-moi le cycle de vie d'une requête Symfony.", "category": "symfony_core", "expected_concepts": ["Kernel", "Request", "Response", "Controller", "événements"]}
+{"prompt": "Comment configurer le container de services Symfony ?", "category": "symfony_core", "expected_concepts": ["services.yaml", "bind", "arguments", "tags", "alias"]}
+{"prompt": "Qu'est-ce qu'une entité Doctrine et comment la créer ?", "category": "doctrine", "expected_concepts": ["Entity", "ORM", "mapping", "annotation", "propriété"]}
+{"prompt": "Comment créer une relation ManyToOne avec Doctrine ?", "category": "doctrine", "expected_concepts": ["ManyToOne", "JoinColumn", "inversedBy", "mappedBy", "cascade"]}
+{"prompt": "Explique-moi les repositories Doctrine personnalisés.", "category": "doctrine", "expected_concepts": ["Repository", "EntityRepository", "QueryBuilder", "findBy", "custom"]}
+{"prompt": "Comment utiliser le QueryBuilder Doctrine ?", "category": "doctrine", "expected_concepts": ["QueryBuilder", "select", "where", "join", "getQuery"]}
+{"prompt": "Qu'est-ce que DQL et comment l'utiliser ?", "category": "doctrine", "expected_concepts": ["DQL", "Query", "createQuery", "setParameter", "getResult"]}
+{"prompt": "Comment gérer les migrations Doctrine dans Symfony ?", "category": "doctrine", "expected_concepts": ["migration", "make:migration", "migrate", "diff", "version"]}
+{"prompt": "Explique-moi les lifecycle callbacks Doctrine.", "category": "doctrine", "expected_concepts": ["PrePersist", "PostUpdate", "lifecycle", "callback", "événement"]}
+{"prompt": "Comment créer un formulaire Symfony ?", "category": "forms", "expected_concepts": ["FormType", "createForm", "handleRequest", "isSubmitted", "isValid"]}
+{"prompt": "Comment valider les données d'un formulaire Symfony ?", "category": "forms", "expected_concepts": ["Assert", "Constraint", "NotBlank", "Length", "validation"]}
+{"prompt": "Qu'est-ce qu'un Data Transformer dans Symfony Forms ?", "category": "forms", "expected_concepts": ["DataTransformer", "transform", "reverseTransform", "ModelData", "ViewData"]}
+{"prompt": "Comment créer un type de formulaire personnalisé ?", "category": "forms", "expected_concepts": ["AbstractType", "buildForm", "configureOptions", "FormBuilder", "extends"]}
+{"prompt": "Explique-moi le système de sécurité Symfony.", "category": "security", "expected_concepts": ["firewall", "authenticator", "User", "Security", "access_control"]}
+{"prompt": "Comment implémenter l'authentification dans Symfony ?", "category": "security", "expected_concepts": ["Authenticator", "passport", "UserProvider", "login", "logout"]}
+{"prompt": "Qu'est-ce qu'un Voter dans Symfony et comment l'utiliser ?", "category": "security", "expected_concepts": ["Voter", "VoterInterface", "supports", "voteOnAttribute", "isGranted"]}
+{"prompt": "Comment gérer les rôles et permissions dans Symfony ?", "category": "security", "expected_concepts": ["ROLE_USER", "ROLE_ADMIN", "hierarchy", "access_control", "denyAccessUnlessGranted"]}
+{"prompt": "Comment protéger contre les attaques CSRF dans Symfony ?", "category": "security", "expected_concepts": ["CSRF", "token", "csrf_protection", "isCsrfTokenValid", "formulaire"]}
+{"prompt": "Explique-moi le hashage des mots de passe dans Symfony.", "category": "security", "expected_concepts": ["PasswordHasher", "hashPassword", "isPasswordValid", "bcrypt", "argon2"]}
+{"prompt": "Comment écrire un test unitaire PHPUnit en Symfony ?", "category": "testing", "expected_concepts": ["TestCase", "assertEquals", "assertTrue", "mock", "PHPUnit"]}
+{"prompt": "Comment tester un Controller Symfony ?", "category": "testing", "expected_concepts": ["WebTestCase", "createClient", "request", "assertResponseIsSuccessful", "crawler"]}
+{"prompt": "Qu'est-ce qu'un mock et comment l'utiliser dans PHPUnit ?", "category": "testing", "expected_concepts": ["mock", "createMock", "expects", "willReturn", "method"]}
+{"prompt": "Comment utiliser les fixtures dans Symfony ?", "category": "testing", "expected_concepts": ["Fixture", "load", "persist", "flush", "DataFixtures"]}
+{"prompt": "Explique-moi le pattern Repository dans Symfony.", "category": "architecture", "expected_concepts": ["Repository", "séparation", "couche", "données", "abstraction"]}
+{"prompt": "Qu'est-ce que CQRS et comment l'implémenter avec Symfony ?", "category": "architecture", "expected_concepts": ["Command", "Query", "Handler", "Bus", "séparation"]}
+{"prompt": "Comment utiliser Symfony Messenger pour les messages asynchrones ?", "category": "architecture", "expected_concepts": ["Messenger", "Message", "Handler", "transport", "async"]}
+{"prompt": "Explique-moi l'architecture hexagonale avec Symfony.", "category": "architecture", "expected_concepts": ["port", "adapter", "domain", "infrastructure", "application"]}
+{"prompt": "Ce code Symfony ne fonctionne pas, pourquoi ?\n```php\n$user = $repository->find($id);\necho $user->getName();\n```", "category": "debug", "expected_concepts": ["null", "vérification", "find", "exception", "typage"]}
+{"prompt": "Mon formulaire Symfony ne se soumet pas correctement. Voici mon code:\n```php\n$form = $this->createForm(UserType::class);\nif ($form->isValid()) {\n    // ...\n}\n```", "category": "debug", "expected_concepts": ["handleRequest", "isSubmitted", "Request", "form", "validation"]}
+{"prompt": "J'ai une erreur 'Service not found' dans Symfony. Comment la résoudre ?", "category": "debug", "expected_concepts": ["autowiring", "services.yaml", "public", "alias", "container"]}
+{"prompt": "Ma relation Doctrine ne charge pas les données liées. Comment corriger ?", "category": "debug", "expected_concepts": ["lazy loading", "fetch", "EAGER", "join", "proxy"]}
+{"prompt": "Comment optimiser les performances d'une requête Doctrine lente ?", "category": "debug", "expected_concepts": ["index", "N+1", "join", "select", "pagination"]}
+{"prompt": "Comment implémenter un Aggregate Root DDD avec Doctrine et les Domain Events ?", "category": "ddd_advanced", "expected_concepts": ["Aggregate", "AggregateRoot", "DomainEvent", "invariant", "consistency boundary", "repository"]}
+{"prompt": "Explique le pattern Outbox pour garantir la cohérence entre Doctrine et Messenger.", "category": "ddd_advanced", "expected_concepts": ["Outbox", "transactional", "eventual consistency", "idempotent", "relay"]}
+{"prompt": "Comment implémenter l'Event Sourcing avec Symfony et Prooph ?", "category": "ddd_advanced", "expected_concepts": ["Event Store", "projection", "replay", "snapshot", "aggregate stream"]}
+{"prompt": "Qu'est-ce qu'un Bounded Context en DDD et comment le structurer dans Symfony ?", "category": "ddd_advanced", "expected_concepts": ["Bounded Context", "ubiquitous language", "context map", "anti-corruption layer", "shared kernel"]}
+{"prompt": "Comment implémenter des Value Objects immuables en PHP 8 ?", "category": "ddd_advanced", "expected_concepts": ["Value Object", "readonly", "immutable", "equals", "self-validation"]}
+{"prompt": "Comment configurer Messenger avec plusieurs transports et le routing par message ?", "category": "messenger_advanced", "expected_concepts": ["transport", "routing", "async", "sync", "doctrine", "redis", "amqp"]}
+{"prompt": "Explique le mécanisme de retry et failure transport dans Symfony Messenger.", "category": "messenger_advanced", "expected_concepts": ["retry", "failure transport", "RecoverableException", "multiplier", "max_retries", "dead letter"]}
+{"prompt": "Comment implémenter un middleware Messenger personnalisé ?", "category": "messenger_advanced", "expected_concepts": ["MiddlewareInterface", "StackInterface", "envelope", "stamp", "HandleMessageMiddleware"]}
+{"prompt": "Comment gérer les transactions distribuées avec Messenger et Doctrine ?", "category": "messenger_advanced", "expected_concepts": ["DoctrineTransactionMiddleware", "transactional outbox", "two-phase commit", "saga"]}
+{"prompt": "Comment implémenter le pattern CQRS complet avec des projections read-model ?", "category": "cqrs_advanced", "expected_concepts": ["CommandBus", "QueryBus", "read model", "projection", "eventual consistency", "denormalization"]}
+{"prompt": "Comment configurer le Second Level Cache de Doctrine ?", "category": "doctrine_advanced", "expected_concepts": ["Second Level Cache", "region", "cache mode", "READ_ONLY", "NONSTRICT_READ_WRITE", "invalidation"]}
+{"prompt": "Comment optimiser Doctrine pour le batch processing de millions d'enregistrements ?", "category": "doctrine_advanced", "expected_concepts": ["iterate", "batch", "clear", "detach", "memory", "toIterable"]}
+{"prompt": "Explique les stratégies d'héritage Doctrine (STI, CTI, MappedSuperclass).", "category": "doctrine_advanced", "expected_concepts": ["Single Table Inheritance", "Class Table Inheritance", "MappedSuperclass", "discriminator", "performance"]}
+{"prompt": "Comment implémenter des filtres Doctrine globaux (Soft Delete, Multi-tenant) ?", "category": "doctrine_advanced", "expected_concepts": ["Filter", "SQLFilter", "addFilterConstraint", "enable", "parameter"]}
+{"prompt": "Comment configurer des read replicas avec Doctrine ?", "category": "doctrine_advanced", "expected_concepts": ["replica", "primary", "MasterSlaveConnection", "keepReplica", "connection wrapper"]}
+{"prompt": "Comment créer un custom Normalizer/Denormalizer pour API Platform ?", "category": "api_advanced", "expected_concepts": ["NormalizerInterface", "DenormalizerInterface", "context", "groups", "circular reference"]}
+{"prompt": "Comment implémenter une pagination custom avec curseur dans API Platform ?", "category": "api_advanced", "expected_concepts": ["cursor", "pagination", "Paginator", "PartialPaginatorInterface", "keyset"]}
+{"prompt": "Comment sécuriser une API avec JWT et refresh tokens dans Symfony ?", "category": "security_advanced", "expected_concepts": ["JWT", "refresh token", "lexik", "stateless", "blacklist", "rotation"]}
+{"prompt": "Comment implémenter l'authentification OAuth2/OpenID Connect ?", "category": "security_advanced", "expected_concepts": ["OAuth2", "OpenID Connect", "authorization code", "PKCE", "scope", "claims"]}
+{"prompt": "Comment protéger contre les attaques par timing dans la comparaison de tokens ?", "category": "security_advanced", "expected_concepts": ["timing attack", "hash_equals", "constant-time", "HMAC", "side-channel"]}
+{"prompt": "Comment utiliser le Workflow component pour une machine à états complexe ?", "category": "symfony_advanced", "expected_concepts": ["Workflow", "places", "transitions", "marking", "guard", "state machine"]}
+{"prompt": "Comment implémenter le Lock component pour la gestion de concurrence ?", "category": "symfony_advanced", "expected_concepts": ["Lock", "Semaphore", "Store", "TTL", "blocking", "distributed"]}
+{"prompt": "Comment configurer le Cache component avec des stratégies de stampede protection ?", "category": "symfony_advanced", "expected_concepts": ["Cache", "stampede", "early expiration", "probabilistic", "locking", "beta"]}
+{"prompt": "Comment utiliser le RateLimiter component pour protéger une API ?", "category": "symfony_advanced", "expected_concepts": ["RateLimiter", "fixed window", "sliding window", "token bucket", "storage", "throttle"]}
+{"prompt": "Comment implémenter des tests de mutation avec Infection en Symfony ?", "category": "testing_advanced", "expected_concepts": ["mutation testing", "Infection", "mutant", "MSI", "coverage", "quality"]}
+{"prompt": "Comment tester des handlers Messenger de manière isolée ?", "category": "testing_advanced", "expected_concepts": ["InMemoryTransport", "MessageBusInterface", "envelope", "stamp", "assertion"]}
+{"prompt": "Comment implémenter des tests de contrat avec API Platform ?", "category": "testing_advanced", "expected_concepts": ["contract testing", "OpenAPI", "schema", "validation", "consumer-driven"]}
+{"prompt": "Comment profiler et optimiser une application Symfony en production ?", "category": "performance_advanced", "expected_concepts": ["Blackfire", "profiler", "bottleneck", "N+1", "cache", "OPcache", "preloading"]}
+{"prompt": "Comment configurer le preloading PHP pour optimiser Symfony ?", "category": "performance_advanced", "expected_concepts": ["preloading", "opcache.preload", "composer", "classmap", "warmup"]}
+{"prompt": "Comment implémenter un système de feature flags avec Symfony ?", "category": "architecture_advanced", "expected_concepts": ["feature flag", "toggle", "strategy", "gradual rollout", "A/B testing"]}
+{"prompt": "Comment structurer une application Symfony en monorepo multi-bundles ?", "category": "architecture_advanced", "expected_concepts": ["monorepo", "bundle", "composer path", "shared kernel", "dependency"]}
+{"prompt": "Comment implémenter le pattern Specification pour des règles métier complexes ?", "category": "architecture_advanced", "expected_concepts": ["Specification", "composite", "and", "or", "not", "isSatisfiedBy"]}
+{"prompt": "Comment gérer les Long Running Processes avec Symfony (workers, daemons) ?", "category": "architecture_advanced", "expected_concepts": ["worker", "daemon", "signal", "memory leak", "Supervisor", "graceful shutdown"]}
+{"prompt": "Ce code provoque des memory leaks en production:\n```php\nwhile ($messages = $query->iterate()) {\n    foreach ($messages as $message) {\n        $this->process($message);\n    }\n}\n```", "category": "debug_advanced", "expected_concepts": ["memory leak", "clear", "detach", "batch", "gc_collect_cycles"]}
+{"prompt": "Mon worker Messenger consomme de plus en plus de mémoire. Comment diagnostiquer ?", "category": "debug_advanced", "expected_concepts": ["memory_limit", "ResetInterface", "doctrine clear", "profiling", "leak"]}
+{"prompt": "J'ai des deadlocks avec Doctrine en environnement concurrent. Comment résoudre ?", "category": "debug_advanced", "expected_concepts": ["deadlock", "lock", "transaction isolation", "retry", "optimistic locking", "version"]}
+{"prompt": "Comment débugger un problème de serialization circulaire avec le Serializer ?", "category": "debug_advanced", "expected_concepts": ["circular reference", "MaxDepthHandler", "ignore", "groups", "context"]}
+{"prompt": "Mon cache Doctrine est incohérent après un déploiement. Comment résoudre ?", "category": "debug_advanced", "expected_concepts": ["cache invalidation", "clear", "warmup", "APCu", "Redis", "version tag"]}
